@@ -1,7 +1,7 @@
 /*
-* ZTE Modem Monitor Panel - Universal Version (Mac & iOS)
+* ZTE Modem Monitor Panel - Universal Version (Fixed for Mac/iOS)
 * GitHub: Rabbit-Spec/ZTE-Modem-TimeSync-Shortcut
-* v0.1
+* v0.2
 */
 
 const IP = "192.168.1.1";
@@ -9,10 +9,11 @@ const USER = "root";
 const PASS = "Zte521";
 const EXPECT_PATH = "/opt/homebrew/bin/expect"; 
 
-// 检查是否具备执行本地命令的能力 (Mac 专属)
-const isMac = typeof $utils !== "undefined" && typeof $utils.exec === "function";
+// 更加精准的环境判断
+const isMac = (typeof $environment !== "undefined" && $environment.system === "macOS") || (typeof $utils !== "undefined" && typeof $utils.exec === "function");
 
 if (isMac) {
+    // Mac 端执行逻辑：抓取并存储数据
     const cmd = `${EXPECT_PATH} -c 'set timeout 5; spawn telnet ${IP}; expect "Login:"; send "${USER}\\r"; expect "Password:"; send "${PASS}\\r"; expect "/ # "; send "uptime; top -n 1 | grep CPU; cat /proc/pon_info\\r"; expect "/ # "; send "exit\\r"; expect eof'`;
 
     $utils.exec("bash", ["-c", cmd], (stdout, stderr) => {
@@ -23,7 +24,7 @@ if (isMac) {
 
             const content = `🌡 光衰: ${rxPower} dBm  |  💻 CPU: ${cpuUsage}\n⏱ 运行时间: ${uptime}`;
             
-            // 将数据存入持久化存储，方便 iOS 端通过 iCloud 同步查看
+            // 写入缓存，供 iOS 端同步读取
             $persistentStore.write(content, "ZTE_Modem_Data");
 
             $done({
@@ -33,15 +34,20 @@ if (isMac) {
                 "icon-color": "#007AFF"
             });
         } else {
-            $done({ title: "连接失败", content: "请检查 Mac 端 Telnet 环境", icon: "exclamationmark.triangle", "icon-color": "#FF3B30" });
+            $done({
+                title: "中兴光猫 (连接异常)",
+                content: "请检查 Telnet 是否开启及 expect 环境",
+                icon: "exclamationmark.triangle",
+                "icon-color": "#FF3B30"
+            });
         }
     });
 } else {
-    // iOS 环境逻辑：从缓存读取 Mac 同步的数据
+    // iOS 端执行逻辑：仅读取缓存
     const cachedData = $persistentStore.read("ZTE_Modem_Data");
     $done({
         title: "中兴光猫状态 (iOS)",
-        content: cachedData ? cachedData : "⏳ 请先在 Mac 端 Surge 运行以同步数据",
+        content: cachedData ? cachedData : "⏳ 待同步：请确保 Mac 端 Surge 已运行脚本",
         icon: "iphone",
         "icon-color": "#34C759"
     });
