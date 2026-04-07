@@ -1,7 +1,7 @@
-# NAME: 深巷有喵的「ChinaCIDR」规则
+# NAME: ChinaCIDR
 # AUTHOR: Rabbit-Spec
 # REPO: https://github.com/Rabbit-Spec/Surge
-# UPDATED: 2026-04-07 16:50:49
+# UPDATED: 2026-04-07 17:06:14
 
 # ======= 上游同步规则 ========
 IP-CIDR,1.0.1.0/24
