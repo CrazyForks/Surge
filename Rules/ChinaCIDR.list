@@ -1,7 +1,7 @@
 # NAME: ChinaCIDR
 # AUTHOR: Rabbit-Spec
 # REPO: https://github.com/Rabbit-Spec/Surge
-# UPDATED: 2026-04-07 15:47:07
+# UPDATED: 2026-04-07 15:48:54
 
 IP-CIDR,1.0.1.0/24
 IP-CIDR,1.0.2.0/23
