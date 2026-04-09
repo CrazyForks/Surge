@@ -1,2 +1,4 @@
-# snbforums
+# SNBFORUMS
 DOMAIN-SUFFIX,snbforums.com
+# CalDigit
+DOMAIN-SUFFIX,caldigit.com
