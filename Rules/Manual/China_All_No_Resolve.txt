@@ -1,2 +1,6 @@
+# 沉浸式翻译
 DOMAIN-SUFFIX,immersivetranslate.com
+# 小佩宠物
 DOMAIN-SUFFIX,petkit.com
+# ASUS
+DOMAIN-SUFFIX,asus.com
