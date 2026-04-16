@@ -4,3 +4,5 @@ DOMAIN-SUFFIX,snbforums.com
 DOMAIN-SUFFIX,asuswrt-merlin.net
 # CalDigit
 DOMAIN-SUFFIX,caldigit.com
+# OnlyFans
+DOMAIN-SUFFIX,onlyfans.com
