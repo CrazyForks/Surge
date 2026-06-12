@@ -1,8 +1,8 @@
-# NAME: 深巷有喵的「Meta」规则
+# NAME: 深巷有喵的「Facebook」规则
 # AUTHOR: Rabbit-Spec
 # REPO: https://github.com/Rabbit-Spec/Surge
 # UPDATED: 2026.06.12 18:37:00
-# TOTAL: 584
+# TOTAL: 570
 
 # ======= 上游同步规则 ========
 DOMAIN-SUFFIX,aboutfacebook.com
@@ -529,8 +529,11 @@ DOMAIN-SUFFIX,web-instagram.net
 DOMAIN-SUFFIX,whatsapp-plus.info
 DOMAIN-SUFFIX,whatsapp-plus.me
 DOMAIN-SUFFIX,whatsapp-plus.net
+DOMAIN-SUFFIX,whatsapp.biz
 DOMAIN-SUFFIX,whatsapp.cc
+DOMAIN-SUFFIX,whatsapp.com
 DOMAIN-SUFFIX,whatsapp.info
+DOMAIN-SUFFIX,whatsapp.net
 DOMAIN-SUFFIX,whatsapp.org
 DOMAIN-SUFFIX,whatsapp.tv
 DOMAIN-SUFFIX,whatsappbrand.com
@@ -572,20 +575,3 @@ IP-CIDR,54.173.34.141/32,no-resolve
 IP-CIDR,54.235.23.242/32,no-resolve
 IP-CIDR,54.93.124.31/32,no-resolve
 IP-ASN,32934,no-resolve
-DOMAIN,graph.facebook.com
-DOMAIN-SUFFIX,bintray.com
-DOMAIN-SUFFIX,whatsapp.biz
-DOMAIN-SUFFIX,whatsapp.com
-DOMAIN-SUFFIX,whatsapp.net
-DOMAIN-KEYWORD,whatsapp
-IP-CIDR,158.85.224.160/27,no-resolve
-IP-CIDR,158.85.46.128/27,no-resolve
-IP-CIDR,158.85.5.192/27,no-resolve
-IP-CIDR,173.192.222.160/27,no-resolve
-IP-CIDR,173.192.231.32/27,no-resolve
-IP-CIDR,18.194.0.0/15,no-resolve
-IP-CIDR,184.173.128.0/17,no-resolve
-IP-CIDR,208.43.122.128/27,no-resolve
-IP-CIDR,34.224.0.0/12,no-resolve
-IP-CIDR,50.22.198.204/30,no-resolve
-IP-CIDR,54.242.0.0/15,no-resolve
